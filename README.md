@@ -5,7 +5,7 @@ The release contains 3 folders containing examples on training DNN with keras:
    3. Hhh_analysis (real Keras code got Hhh analysis);  
 
 # Notes  
-If you are on lxplus, you need to be in release "CMSSW_9_0_X_2017-02-14-1100" or older to have keras installed.  
+If you are on lxplus, you need to be in release "CMSSW_9_0_X_2017-02-27-2300" or older to have keras installed.  
 At the moment tensorflow is not installed in any release (you have to use theano). You can switch to theano by:  
 ```
 vim ~/.keras/keras.json
@@ -16,7 +16,7 @@ vim ~/.keras/keras.json
 In order to run Keras on the tt and Hhh ntuples:  
 ```
 git clone https://github.com/lpernie/Keras_Hhh.git;  
-cd Hhh_analysis/files_root;  
+cd Keras_Hhh/Hhh_analysis/files_root;  
 source GetTheFiles.sh;  
 cd ../;  
 python Hhh_tt_MLP.py;

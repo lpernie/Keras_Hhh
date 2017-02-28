@@ -21,7 +21,7 @@ from keras.layers import Input, merge
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 from keras.utils.np_utils import to_categorical
 import cPickle
-#import deepdish.io as io #not available yet
+import deepdish.io as io
 execfile("Useful_func.py")
 # Fix random seed for reproducibility
 seed = 7; np.random.seed(seed);
@@ -44,8 +44,9 @@ ttbar = root2panda('files_root/delphes_tt_4M_PU40_WtomuALL_1Ag_mvammc.root', 'ev
 Hhh3['fin_weight']  = Hhh3['weight']*Hhh3['reweighting']
 ttbar['fin_weight'] = ttbar['weight']*ttbar['reweighting']
 # Save the dataframe as h5 file (for quick loading in the future).
-#io.save(open('ttbar.h5', 'wb'), ttbar)
-#new_df = io.load(open('ttbar.h5', 'rb'))
+#io.save(open('models/ttbar.h5', 'wb'), ttbar_0)
+#ttbar = io.load(open('models/ttbar.h5', 'rb'))
+
 if debug:
   print("---> Hhh3 Displayed as panda dataframe: "); print(Hhh3)
   print("The shape for Hhh3 is [nb_events, nb_variables]: "); print(Hhh3.shape)
