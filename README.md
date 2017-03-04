@@ -21,3 +21,10 @@ source GetTheFiles.sh;
 cd ../;  
 python Hhh_tt_MLP.py;
 ```
+
+# DNN with Keras
+   1. Usually you train with 50% of signal and backgrund. This is done by using the same numbers of events in the 2 classes, or giving a weight to the classes to make them count the same. You can set the weights with class_weight (single weights for each events of a class), and sample_weight (array of weights for each event in a class) and give them to the funciton "model.fit()".   
+   2. There is no special receipt for the best MVA. Usually you can try to play with the weights of the initialization, the parameters of the optimizer, epoch, the activation functions, the validation spits ecc.   
+   3. It can be useful to rank the parameter for how they are useful. While in a BTD this is easy, for NN is not possible. You can make a a-priori ranking, before cretaing the classifier, but this assume that is a linear model, so it has to be taken cum-grano-salis. Details in "https://github.com/mickypaganini/bbyy_jet_classifier/blob/master/bbyy_jet_classifier/process_data.py#L113"   
+   4. Correlation among features can be estimated using the Pierson coefficient
+   5. To perform a parametric training you need an extra input to the neural network: the mass. You have to do the training passing events coming from different samples (different mass), passing the mass value as a input of the NN.   
